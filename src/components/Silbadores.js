@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
-// import Portraits from "./queries/portraits";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import "./Silbadores.scss";
 
 // console.log(Portraits);
@@ -177,13 +179,11 @@ const Silbadores = () => {
   useEffect(() => {
     console.log(pic);
   }, [pic]);
-  // const handleClick = () => {
-  //   console.log("click");
-  // silbador.width = "250px";
-  // setTimeout(() => {
-  //   silbador.width = "130px";
-  // }, 5000);
-  // };
+
+  const handleClick = (event) => {
+    console.log(event.target.height);
+    event.target.height = 250;
+  };
 
   // useEffect(() => {
   //   // TODO: Images are fetched and displayed, but quality is low. Find way to improve quality.
@@ -211,6 +211,21 @@ const Silbadores = () => {
         Galería homenaje a los silbadores herreños que mantienen viva esta bella
         tradición
       </p>
+      <div className="row">
+        {pic.map((img) => {
+          return (
+            <div className="img col">
+              <img
+                src={img.link}
+                alt={img.title.rendered}
+                height={125}
+                key={img.id}
+                onClick={handleClick}
+              />
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };

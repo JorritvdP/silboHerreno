@@ -25,7 +25,6 @@
 //   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 // }
 
-// .photo {
-//   padding: 0.8rem;
-//   padding-right: 30px;
-// }
+.img:hover {
+  cursor: pointer;
+}
