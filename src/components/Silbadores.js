@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 // import Portraits from "./queries/portraits";
-import { StaticImage, GatsbyImage } from "gatsby-plugin-image";
-import { silbadoresContainer } from "./silbadores.module.scss";
+import "./Silbadores.scss";
 
 // console.log(Portraits);
-const width = "130px";
+// const width = "130px";
 
 // const portraits = [
 //   <StaticImage
@@ -158,9 +157,22 @@ const width = "130px";
 //   />,
 // ];
 
-const Silbadores = ({ data }) => {
+const Silbadores = () => {
   const [pic, setPic] = useState([]);
 
+  useEffect(() => {
+    fetch("https://silbodeelhierro.com//wp-json/wp/v2/media")
+      .then((response) => response.json())
+      .then((data) => {
+        let portraits = [];
+        data.map((img) => {
+          if (img.caption.rendered === "<p>silbador</p>\n") {
+            return portraits.push(img);
+          }
+        });
+        console.log(portraits);
+      });
+  });
   // const handleClick = () => {
   //   console.log("click");
   // silbador.width = "250px";
@@ -169,46 +181,32 @@ const Silbadores = ({ data }) => {
   // }, 5000);
   // };
 
-  useEffect(() => {
-    // TODO: Images are fetched and displayed, but quality is low. Find way to improve quality.
-    const test2 = data.map((node) => {
-      return (
-        <span>
-          <GatsbyImage
-            image={node.node.childImageSharp.gatsbyImageData}
-            key={node.node.childImageSharp.id}
-          />
-        </span>
-      );
-    });
-    setPic(test2);
-  }, []);
+  // useEffect(() => {
+  //   // TODO: Images are fetched and displayed, but quality is low. Find way to improve quality.
+  //   const test2 = data.map((node) => {
+  //     return (
+  //       <span>
+  //         <GatsbyImage
+  //           image={node.node.childImageSharp.gatsbyImageData}
+  //           key={node.node.childImageSharp.id}
+  //         />
+  //       </span>
+  //     );
+  //   });
+  //   setPic(test2);
+  // }, []);
 
   // useEffect(() => {
   //   console.log(pic);
   // }, [pic]);
 
   return (
-    <div className={silbadoresContainer}>
+    <div className="silbadoresContainer">
       <h2>Silbadores actuales</h2>
       <p>
         Galería homenaje a los silbadores herreños que mantienen viva esta bella
         tradición
       </p>
-      <div className="p-2">
-        {pic}
-        {/* {test1.map((i) => {
-          return (
-            <img
-              src={i.src}
-              alt={i.alt}
-              width={i.width}
-              key={i.key}
-              onClick={handleClick(i)}
-            />
-          );
-        })} */}
-      </div>
     </div>
   );
 };
