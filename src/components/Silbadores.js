@@ -167,12 +167,16 @@ const Silbadores = () => {
         let portraits = [];
         data.map((img) => {
           if (img.caption.rendered === "<p>silbador</p>\n") {
-            return portraits.push(img);
+            portraits = [...portraits, img];
           }
         });
-        console.log(portraits);
+        setPic(portraits);
       });
-  });
+  }, []);
+
+  useEffect(() => {
+    console.log(pic);
+  }, [pic]);
   // const handleClick = () => {
   //   console.log("click");
   // silbador.width = "250px";
