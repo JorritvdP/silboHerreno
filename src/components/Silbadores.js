@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import SilbadorModal from "./SilbadorModal";
 import "./Silbadores.scss";
 
 // console.log(Portraits);
@@ -161,6 +162,7 @@ import "./Silbadores.scss";
 
 const Silbadores = () => {
   const [pic, setPic] = useState([]);
+  const [modalShow, setModalShow] = useState(false);
 
   useEffect(() => {
     fetch("https://silbodeelhierro.com//wp-json/wp/v2/media")
@@ -180,25 +182,7 @@ const Silbadores = () => {
     console.log(pic);
   }, [pic]);
 
-  const handleClick = (event) => {
-    console.log(event.target.height);
-    event.target.height = 250;
-  };
-
-  // useEffect(() => {
-  //   // TODO: Images are fetched and displayed, but quality is low. Find way to improve quality.
-  //   const test2 = data.map((node) => {
-  //     return (
-  //       <span>
-  //         <GatsbyImage
-  //           image={node.node.childImageSharp.gatsbyImageData}
-  //           key={node.node.childImageSharp.id}
-  //         />
-  //       </span>
-  //     );
-  //   });
-  //   setPic(test2);
-  // }, []);
+  const handleClick = (event) => {};
 
   // useEffect(() => {
   //   console.log(pic);
@@ -211,21 +195,33 @@ const Silbadores = () => {
         Galería homenaje a los silbadores herreños que mantienen viva esta bella
         tradición
       </p>
-      <div className="row">
-        {pic.map((img) => {
-          return (
-            <div className="img col">
-              <img
-                src={img.link}
-                alt={img.title.rendered}
-                height={125}
-                key={img.id}
-                onClick={handleClick}
-              />
-            </div>
-          );
-        })}
-      </div>
+
+      {/* {pic.map((img) => {
+        return <SilbadorModal props={img} />;
+      })} */}
+      <Container fluid>
+        <Row>
+          {pic.map((img) => {
+            return (
+              <Col lg={true} className="">
+                <img
+                  src={img.link}
+                  alt={img.title.rendered}
+                  height={150}
+                  key={img.id}
+                  className="img p-0"
+                  onClick={() => setModalShow(true)}
+                />
+                <SilbadorModal
+                  props={img}
+                  show={modalShow}
+                  onHide={() => setModalShow(false)}
+                />
+              </Col>
+            );
+          })}
+        </Row>
+      </Container>
     </div>
   );
 };
