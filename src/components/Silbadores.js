@@ -182,6 +182,7 @@ const Silbadores = () => {
     console.log(pic);
   }, [pic]);
 
+  // TODO: Modal for specific ID
   const handleClick = (event) => {};
 
   // useEffect(() => {
