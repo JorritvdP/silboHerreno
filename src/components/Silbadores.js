@@ -165,25 +165,47 @@ const Silbadores = () => {
   const [modalShow, setModalShow] = useState(false);
 
   useEffect(() => {
-    fetch("https://silbodeelhierro.com//wp-json/wp/v2/media")
+    fetch("https://silbodeelhierro.com//wp-json/wp/v2/media?per_page=28")
       .then((response) => response.json())
       .then((data) => {
         let portraits = [];
         data.map((img) => {
           if (img.caption.rendered === "<p>silbador</p>\n") {
-            portraits = [...portraits, img];
+            portraits = [
+              ...portraits,
+              <img
+                t={img.id}
+                src={img.link}
+                alt={img.title.rendered}
+                height={150}
+                key={img.id}
+                className="img p-0"
+                // onClick={handleClick}
+              />,
+            ];
           }
         });
         setPic(portraits);
       });
   }, []);
 
-  useEffect(() => {
-    console.log(pic);
-  }, [pic]);
+  // useEffect(() => {
+  //   console.log(pic);
+  // }, [pic]);
 
   // TODO: Modal for specific ID
-  const handleClick = (event) => {};
+  const handleClick = (event) => {
+    console.log(event.target);
+    setModalShow(true);
+    return (
+      <SilbadorModal
+        props={event.target}
+        show={modalShow}
+        key={event.target.t}
+        onHide={() => setModalShow(false)}
+      />
+    );
+  };
 
   // useEffect(() => {
   //   console.log(pic);
@@ -201,27 +223,24 @@ const Silbadores = () => {
         return <SilbadorModal props={img} />;
       })} */}
       <Container fluid>
-        <Row>
-          {pic.map((img) => {
+        {/* <Row> */}
+        {pic}
+        {/* {pic.map((img) => {
             return (
               <Col lg={true} className="">
                 <img
+                  t={img.id}
                   src={img.link}
                   alt={img.title.rendered}
                   height={150}
                   key={img.id}
                   className="img p-0"
-                  onClick={() => setModalShow(true)}
-                />
-                <SilbadorModal
-                  props={img}
-                  show={modalShow}
-                  onHide={() => setModalShow(false)}
+                  onClick={handleClick}
                 />
               </Col>
             );
-          })}
-        </Row>
+          })} */}
+        {/* </Row> */}
       </Container>
     </div>
   );

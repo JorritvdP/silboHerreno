@@ -3,6 +3,20 @@ import "./NavigationBar.scss";
 
 const Navigationbar = (props) => {
   const [scrolled, setScrolled] = useState(false);
+  const [logo, setLogo] = useState();
+
+  useEffect(() => {
+    fetch("https://silbodeelhierro.com//wp-json/wp/v2/media?per_page=100")
+      .then((response) => response.json())
+      .then((data) => {
+        data.map((img) => {
+          if (img.caption.rendered === "<p>logo</p>\n") {
+            console.log(img.link);
+            setLogo(img.link);
+          }
+        });
+      });
+  }, []);
 
   const handleScroll = () => {
     if (props.page === "quienes") {
@@ -22,7 +36,7 @@ const Navigationbar = (props) => {
     <div className={scrolled ? "navContainer" : "scroll"}>
       <div className="image">
         <a href="/">
-          <img src="../../public/silbo_typo_logo.png" alt="silboherrenologo" />
+          <img src={logo} alt="silboherrenologo" />
         </a>
       </div>
       <div className="links">
