@@ -9,12 +9,13 @@ const Navigationbar = (props) => {
     fetch("https://silbodeelhierro.com//wp-json/wp/v2/media?per_page=100")
       .then((response) => response.json())
       .then((data) => {
-        data.map((img) => {
+        let logo;
+        logo = data.map((img) => {
           if (img.caption.rendered === "<p>logo</p>\n") {
-            console.log(img.link);
-            setLogo(img.link);
+            return img.link;
           }
         });
+        setLogo(logo);
       });
   }, []);
 
@@ -36,7 +37,7 @@ const Navigationbar = (props) => {
     <div className={scrolled ? "navContainer" : "scroll"}>
       <div className="image">
         <a href="/">
-          <img src={logo} alt="silboherrenologo" />
+          <img src={logo} alt="silboherrenologo" height={20} />
         </a>
       </div>
       <div className="links">

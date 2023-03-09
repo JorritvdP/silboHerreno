@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+// import Row from "react-bootstrap/Row";
+// import Col from "react-bootstrap/Col";
 import SilbadorModal from "./SilbadorModal";
 import "./Silbadores.scss";
 
@@ -163,6 +163,21 @@ import "./Silbadores.scss";
 const Silbadores = () => {
   const [pic, setPic] = useState([]);
   const [modalShow, setModalShow] = useState(false);
+  const [props, setProps] = useState();
+
+  useEffect(() => {
+    setModalShow(!modalShow);
+  }, [modalShow]);
+
+  const handleClick = (event) => {
+    console.log(event);
+    const props = {
+      src: event.target.src,
+      alt: event.target.alt,
+    };
+    console.log(props);
+    setProps(props);
+  };
 
   useEffect(() => {
     fetch("https://silbodeelhierro.com//wp-json/wp/v2/media?per_page=28")
@@ -180,7 +195,7 @@ const Silbadores = () => {
                 height={150}
                 key={img.id}
                 className="img p-0"
-                // onClick={handleClick}
+                onClick={handleClick}
               />,
             ];
           }
@@ -194,18 +209,6 @@ const Silbadores = () => {
   // }, [pic]);
 
   // TODO: Modal for specific ID
-  const handleClick = (event) => {
-    console.log(event.target);
-    setModalShow(true);
-    return (
-      <SilbadorModal
-        props={event.target}
-        show={modalShow}
-        key={event.target.t}
-        onHide={() => setModalShow(false)}
-      />
-    );
-  };
 
   // useEffect(() => {
   //   console.log(pic);
@@ -225,6 +228,13 @@ const Silbadores = () => {
       <Container fluid>
         {/* <Row> */}
         {pic}
+        {/* <SilbadorModal
+          props={props}
+          show={modalShow}
+          // key={event.target.t}
+          onHide={() => setModalShow(false)}
+        /> */}
+        ;
         {/* {pic.map((img) => {
             return (
               <Col lg={true} className="">
