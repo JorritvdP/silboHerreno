@@ -163,28 +163,29 @@ import "./Silbadores.scss";
 const Silbadores = () => {
   const [pic, setPic] = useState([]);
   const [modalShow, setModalShow] = useState(false);
-  const [props, setProps] = useState();
+  // const [props, setProps] = useState();
+
+  // useEffect(() => {
+  //   setModalShow(!modalShow);
+  // }, [modalShow]);
+
+  // const handleClick = (event) => {
+  // console.log(event);
+  // const props = {
+  //   src: event.target.src,
+  //   alt: event.target.alt,
+  // };
+  // console.log(props);
+  //   setModalShow(!modalShow);
+  // };
 
   useEffect(() => {
-    setModalShow(!modalShow);
-  }, [modalShow]);
-
-  const handleClick = (event) => {
-    console.log(event);
-    const props = {
-      src: event.target.src,
-      alt: event.target.alt,
-    };
-    console.log(props);
-    setProps(props);
-  };
-
-  useEffect(() => {
-    fetch("https://silbodeelhierro.com//wp-json/wp/v2/media?per_page=28")
+    fetch("https://silbodeelhierro.com//wp-json/wp/v2/media?per_page=30")
       .then((response) => response.json())
       .then((data) => {
         let portraits = [];
         data.map((img) => {
+          // console.log(img);
           if (img.caption.rendered === "<p>silbador</p>\n") {
             portraits = [
               ...portraits,
@@ -195,8 +196,14 @@ const Silbadores = () => {
                 height={150}
                 key={img.id}
                 className="img p-0"
-                onClick={handleClick}
+                onClick={() => setModalShow(true)}
               />,
+              // <SilbadorModal
+              //   props={img}
+              //   show={modalShow}
+              //   // key={event.target.t}
+              //   onHide={() => setModalShow(false)}
+              // />,
             ];
           }
         });
@@ -226,16 +233,18 @@ const Silbadores = () => {
         return <SilbadorModal props={img} />;
       })} */}
       <Container fluid>
-        {/* <Row> */}
-        {pic}
-        {/* <SilbadorModal
-          props={props}
-          show={modalShow}
-          // key={event.target.t}
-          onHide={() => setModalShow(false)}
-        /> */}
-        ;
-        {/* {pic.map((img) => {
+        <Row>
+          {/* {pic}
+        {pic.map((img) => {
+          // console.log(img);
+          <SilbadorModal
+            props={img.props}
+            show={modalShow}
+            onHide={() => setModalShow(false)}
+          />;
+        })}
+        ; */}
+          {pic.map((img) => {
             return (
               <Col lg={true} className="">
                 <img
@@ -249,8 +258,9 @@ const Silbadores = () => {
                 />
               </Col>
             );
-          })} */}
-        {/* </Row> */}
+          })}
+          /*{" "}
+        </Row>
       </Container>
     </div>
   );

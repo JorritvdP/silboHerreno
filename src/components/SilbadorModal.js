@@ -3,7 +3,8 @@ import Modal from "react-bootstrap/Modal";
 import React from "react";
 
 function SilbadorModal({ props, show }) {
-  console.log(props);
+  // console.log(props);
+  console.log(show);
   if (show) {
     return (
       <Modal
@@ -14,18 +15,14 @@ function SilbadorModal({ props, show }) {
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            {props.props.title.rendered}
+            {props.alt}
           </Modal.Title>
         </Modal.Header>
         <Modal.Body className="m-auto">
-          <img
-            src={props.props.link}
-            alt={props.props.title.rendered}
-            height={800}
-          />
+          <img src={props.src} alt={props.alt} height={800} key={props.t} />
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={props.onHide}>Close</Button>
+          <Button onClick={props.onClick}>Close</Button>
         </Modal.Footer>
       </Modal>
     );
