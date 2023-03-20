@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Container from "react-bootstrap/Container";
-// import Row from "react-bootstrap/Row";
-// import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import SilbadorModal from "./SilbadorModal";
 import "./Silbadores.scss";
 
@@ -211,9 +211,9 @@ const Silbadores = () => {
       });
   }, []);
 
-  // useEffect(() => {
-  //   console.log(pic);
-  // }, [pic]);
+  useEffect(() => {
+    // console.log(pic);
+  }, [pic]);
 
   // TODO: Modal for specific ID
 
@@ -229,37 +229,16 @@ const Silbadores = () => {
         tradición
       </p>
 
-      {/* {pic.map((img) => {
-        return <SilbadorModal props={img} />;
-      })} */}
       <Container fluid>
         <Row>
-          {/* {pic}
-        {pic.map((img) => {
-          // console.log(img);
-          <SilbadorModal
-            props={img.props}
-            show={modalShow}
-            onHide={() => setModalShow(false)}
-          />;
-        })}
-        ; */}
           {pic.map((img) => {
+            // console.log(img);
             return (
               <Col lg={true} className="">
-                <img
-                  t={img.id}
-                  src={img.link}
-                  alt={img.title.rendered}
-                  height={150}
-                  key={img.id}
-                  className="img p-0"
-                  onClick={handleClick}
-                />
+                {img}
               </Col>
             );
           })}
-          /*{" "}
         </Row>
       </Container>
     </div>
