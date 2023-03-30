@@ -3,21 +3,36 @@ import "./NavigationBar.scss";
 
 const Navigationbar = (props) => {
   const [scrolled, setScrolled] = useState(false);
-  // const [logo, setLogo] = useState();
+  const [logo, setLogo] = useState();
 
-  // useEffect(() => {
-  //   fetch("https://silbodeelhierro.com//wp-json/wp/v2/media?per_page=100")
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       let logo;
-  //       logo = data.map((img) => {
-  //         if (img.caption.rendered === "<p>logo</p>\n") {
-  //           return img.link;
-  //         }
-  //       });
-  //       setLogo(logo);
-  //     });
-  // }, []);
+  useEffect(() => {
+    fetch("https://silbodeelhierro.com//wp-json/wp/v2/media?per_page=30")
+      .then((response) => response.json())
+      .then((data) => {
+        // console.log(data);
+        let logo = [];
+        data.map((img) => {
+          if (img.caption.rendered === "<p>logo</p>\n") {
+            console.log(img);
+            // logo = (
+            //   <img
+            //     t={img.id}
+            //     src={img.link}
+            //     alt={img.title.rendered}
+            //     height={20}
+            //     key={img.id}
+            //     className="img p-0"
+            //   />
+            // );
+          }
+        });
+        setLogo(logo);
+      });
+  }, []);
+
+  useEffect(() => {
+    // console.log(logo);
+  }, [logo]);
 
   const handleScroll = () => {
     if (props.page === "quienes") {
@@ -37,11 +52,12 @@ const Navigationbar = (props) => {
     <div className={scrolled ? "navContainer" : "scroll"}>
       <div className="image">
         <a href="/">
-          <img
+          {/* <img
             src="../../public/silbo_typo_logo.png"
             alt="silboherrenologo"
             height={20}
-          />
+          /> */}
+          {logo}
         </a>
       </div>
       <div className="links">

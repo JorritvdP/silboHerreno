@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import SilbadorModal from "./SilbadorModal";
+// import Container from "react-bootstrap/Container";
+// import Row from "react-bootstrap/Row";
+// import Col from "react-bootstrap/Col";
+// import SilbadorModal from "./SilbadorModal";
 import "./Silbadores.scss";
 
 // console.log(Portraits);
@@ -162,7 +162,7 @@ import "./Silbadores.scss";
 
 const Silbadores = () => {
   const [pic, setPic] = useState([]);
-  const [modalShow, setModalShow] = useState(false);
+  // const [modalShow, setModalShow] = useState(false);
   // const [props, setProps] = useState();
 
   // useEffect(() => {
@@ -180,7 +180,7 @@ const Silbadores = () => {
   // };
 
   useEffect(() => {
-    fetch("https://silbodeelhierro.com//wp-json/wp/v2/media?per_page=30")
+    fetch("https://silbodeelhierro.com//wp-json/wp/v2/media?per_page=100")
       .then((response) => response.json())
       .then((data) => {
         let portraits = [];
@@ -196,7 +196,7 @@ const Silbadores = () => {
                 height={150}
                 key={img.id}
                 className="img p-0"
-                onClick={() => setModalShow(true)}
+                // onClick={() => setModalShow(true)}
               />,
               // <SilbadorModal
               //   props={img}
@@ -228,8 +228,8 @@ const Silbadores = () => {
         Galería homenaje a los silbadores herreños que mantienen viva esta bella
         tradición
       </p>
-
-      <Container fluid>
+      <div className="pb-2">{pic}</div>
+      {/* <Container fluid>
         <Row>
           {pic.map((img) => {
             // console.log(img);
@@ -240,7 +240,7 @@ const Silbadores = () => {
             );
           })}
         </Row>
-      </Container>
+      </Container> */}
     </div>
   );
 };

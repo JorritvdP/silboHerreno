@@ -4,8 +4,7 @@ import Banner from "./components/Banner";
 import Navigationbar from "./components/NavigationBar";
 import Silbadores from "./components/Silbadores";
 import Imagenes from "./components/Imagenes";
-import Testimonios from "./components/Testimonios";
-import Footer from "./components/Footer";
+// import Testimonios from "./components/Testimonios";
 
 function App() {
   return (
@@ -14,8 +13,7 @@ function App() {
       <Banner />
       <Silbadores />
       <Imagenes />
-      <Testimonios />
-      <Footer />
+      {/* <Testimonios /> */}
     </div>
   );
 }

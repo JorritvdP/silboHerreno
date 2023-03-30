@@ -5,12 +5,11 @@ const Imagenes = () => {
   const [pic, setPic] = useState([]);
 
   useEffect(() => {
-    fetch("https://silbodeelhierro.com//wp-json/wp/v2/media?per_page=30")
+    fetch("https://silbodeelhierro.com//wp-json/wp/v2/media?per_page=100")
       .then((response) => response.json())
       .then((data) => {
         let imagenes = [];
         data.map((img) => {
-          console.log(img);
           if (img.caption.rendered === "<p>el hierro</p>\n") {
             imagenes = [
               ...imagenes,
@@ -37,7 +36,7 @@ const Imagenes = () => {
         Descubre las tradicionales casas de roca volcánica con techados de
         madera de sabina.
       </p>
-      <div></div>
+      <div>{pic}</div>
     </div>
   );
 };
