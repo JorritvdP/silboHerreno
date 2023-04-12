@@ -6,25 +6,23 @@ const Navigationbar = (props) => {
   const [logo, setLogo] = useState();
 
   useEffect(() => {
-    fetch("https://silbodeelhierro.com//wp-json/wp/v2/media?per_page=30")
+    fetch("https://silbodeelhierro.com//wp-json/wp/v2/media?search=navbar")
       .then((response) => response.json())
       .then((data) => {
         // console.log(data);
         let logo = [];
+
         data.map((img) => {
-          if (img.caption.rendered === "<p>logo</p>\n") {
-            console.log(img);
-            // logo = (
-            //   <img
-            //     t={img.id}
-            //     src={img.link}
-            //     alt={img.title.rendered}
-            //     height={20}
-            //     key={img.id}
-            //     className="img p-0"
-            //   />
-            // );
-          }
+          logo = (
+            <img
+              t={img.id}
+              src={img.link}
+              alt={img.title.rendered}
+              height={50}
+              key={img.id}
+              className="img p-0"
+            />
+          );
         });
         setLogo(logo);
       });

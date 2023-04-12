@@ -18,6 +18,7 @@ const Imagenes = () => {
                 src={img.link}
                 alt={img.title.rendered}
                 height={150}
+                width={225}
                 key={img.id}
                 className="img p-0"
                 // onClick={() => setModalShow(true)}
@@ -30,7 +31,7 @@ const Imagenes = () => {
   }, []);
 
   return (
-    <div>
+    <div className="casasContainer">
       <h2>La isla de El Hierro</h2>
       <p>
         Descubre las tradicionales casas de roca volcánica con techados de

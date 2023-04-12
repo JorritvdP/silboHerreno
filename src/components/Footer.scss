@@ -1,0 +1,29 @@
+.footerContainer{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  padding: 0px 50px;
+  color: rgba(0,0,0,0.4);
+}
+.footerLinks{
+  display: flex;
+  align-items: center;
+
+  a {
+    color: black;
+    opacity: 0.4;
+    text-decoration: none;
+    font-size: 24px;
+    padding: 0px 10px;
+  }
+
+  a:hover {
+    opacity: 1;
+  }
+}
+.footerText{
+  display: flex;
+  align-items: center;
+}

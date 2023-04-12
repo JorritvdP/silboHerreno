@@ -194,6 +194,7 @@ const Silbadores = () => {
                 src={img.link}
                 alt={img.title.rendered}
                 height={150}
+                width={100}
                 key={img.id}
                 className="img p-0"
                 // onClick={() => setModalShow(true)}
