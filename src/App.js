@@ -5,6 +5,7 @@ import Navigationbar from "./components/NavigationBar";
 import Silbadores from "./components/Silbadores";
 import Imagenes from "./components/Imagenes";
 import Testimonios from "./components/Testimonios";
+import Colaboracion from "./components/Colaboracion";
 import Footer from "./components/Footer";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Silbadores />
       <Imagenes />
       <Testimonios />
+      <Colaboracion />
       <Footer />
     </div>
   );
