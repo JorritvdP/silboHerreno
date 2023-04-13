@@ -5,26 +5,28 @@ const Imagenes = () => {
   const [pic, setPic] = useState([]);
 
   useEffect(() => {
-    fetch("https://silbodeelhierro.com//wp-json/wp/v2/media?per_page=100")
+    fetch(
+      "https://silbodeelhierro.com//wp-json/wp/v2/media?per_page=24&search=el hierro"
+    )
       .then((response) => response.json())
       .then((data) => {
         let imagenes = [];
         data.map((img) => {
-          if (img.caption.rendered === "<p>el hierro</p>\n") {
-            imagenes = [
-              ...imagenes,
-              <img
-                t={img.id}
-                src={img.link}
-                alt={img.title.rendered}
-                height={150}
-                width={225}
-                key={img.id}
-                className="img p-0"
-                // onClick={() => setModalShow(true)}
-              />,
-            ];
-          }
+          // if (img.caption.rendered === "<p>el hierro</p>\n") {
+          imagenes = [
+            ...imagenes,
+            <img
+              t={img.id}
+              src={img.link}
+              alt={img.title.rendered}
+              height={150}
+              width={225}
+              key={img.id}
+              className="img p-0"
+              // onClick={() => setModalShow(true)}
+            />,
+          ];
+          // }
         });
         setPic(imagenes);
       });

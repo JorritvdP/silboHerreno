@@ -180,33 +180,36 @@ const Silbadores = () => {
   // };
 
   useEffect(() => {
-    fetch("https://silbodeelhierro.com//wp-json/wp/v2/media?per_page=100")
+    fetch(
+      "https://silbodeelhierro.com//wp-json/wp/v2/media?per_page=30&search=silbador"
+    )
       .then((response) => response.json())
       .then((data) => {
+        // console.log(data);
         let portraits = [];
         data.map((img) => {
           // console.log(img);
-          if (img.caption.rendered === "<p>silbador</p>\n") {
-            portraits = [
-              ...portraits,
-              <img
-                t={img.id}
-                src={img.link}
-                alt={img.title.rendered}
-                height={150}
-                width={100}
-                key={img.id}
-                className="img p-0"
-                // onClick={() => setModalShow(true)}
-              />,
-              // <SilbadorModal
-              //   props={img}
-              //   show={modalShow}
-              //   // key={event.target.t}
-              //   onHide={() => setModalShow(false)}
-              // />,
-            ];
-          }
+          // if (img.caption.rendered === "<p>silbador</p>\n") {
+          portraits = [
+            ...portraits,
+            <img
+              t={img.id}
+              src={img.link}
+              alt={img.title.rendered}
+              height={150}
+              width={100}
+              key={img.id}
+              className="img p-0"
+              // onClick={() => setModalShow(true)}
+            />,
+            // <SilbadorModal
+            //   props={img}
+            //   show={modalShow}
+            //   // key={event.target.t}
+            //   onHide={() => setModalShow(false)}
+            // />,
+          ];
+          // }
         });
         setPic(portraits);
       });

@@ -4,7 +4,7 @@ import Banner from "./components/Banner";
 import Navigationbar from "./components/NavigationBar";
 import Silbadores from "./components/Silbadores";
 import Imagenes from "./components/Imagenes";
-// import Testimonios from "./components/Testimonios";
+import Testimonios from "./components/Testimonios";
 import Footer from "./components/Footer";
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
       <Banner />
       <Silbadores />
       <Imagenes />
-      {/* <Testimonios /> */}
+      <Testimonios />
       <Footer />
     </div>
   );
