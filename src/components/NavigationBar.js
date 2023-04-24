@@ -64,7 +64,7 @@ const Navigationbar = (props) => {
             <a href="/">Home</a>
           </li>
           <li>
-            <a href="/quienesSomos/">Quiénes Somos</a>
+            <a href="/quienessomos">Quiénes Somos</a>
           </li>
           <li>
             <a href="/">Contacto</a>
