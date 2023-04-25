@@ -6,7 +6,7 @@ const Imagenes = () => {
 
   useEffect(() => {
     fetch(
-      "https://silbodeelhierro.com//wp-json/wp/v2/media?per_page=24&search=el hierro"
+      "https://silbodeelhierro.com//wp-json/wp/v2/media?per_page=16&search=el hierro"
     )
       .then((response) => response.json())
       .then((data) => {
