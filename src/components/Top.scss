@@ -1,29 +1,23 @@
-.bannerContainer {
+.topContainer {
   width: 100%;
   text-align: center;
-  background-image: url('../../public/Sabina-1024x575.webp');
+  background-image: url('../../public/IMG-20210814-WA0033-1024x765.jpg');
   // background-color: grey;
   background-size: cover;
   background-position: center;
-  // background-repeat: no-repeat;
-  background-position: center;
+  background-repeat: no-repeat;
+  background-position: top;
   color: white;
   padding: 150px 0;
-  height: 400px;
+  height: 350px;
   margin-bottom: 30px;
 
   h1{
-    padding: 10px;
+    padding: 5px;
     color: white;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     font-size: 80px;
     font-weight: bold;
     font-family: "Montserrat";
-  }
-
-  h3{
-    padding: 10px;
-    font-size: 40px;
-    color: white;
   }
 }

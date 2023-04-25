@@ -37,7 +37,7 @@ const Navigationbar = (props) => {
       setScrolled(true);
       // window.scrollTop(0, 0);
     } else {
-      window.scrollY >= 380 ? setScrolled(true) : setScrolled(false);
+      window.scrollY >= 300 ? setScrolled(true) : setScrolled(false);
     }
   };
 

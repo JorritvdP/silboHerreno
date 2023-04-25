@@ -1,15 +1,15 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.scss";
-import Banner from "../components/Banner";
+import "./Quienes.scss";
+import Top from "../components/Top";
 import Navigationbar from "../components/NavigationBar";
 import About from "../components/About";
 import Footer from "../components/Footer";
 
 function QuienesSomos() {
   return (
-    <div className="App">
+    <div className="Quienes">
       <Navigationbar />
-      <Banner />
+      <Top />
       <About />
       <Footer />
     </div>

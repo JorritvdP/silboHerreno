@@ -162,22 +162,6 @@ import "./Silbadores.scss";
 
 const Silbadores = () => {
   const [pic, setPic] = useState([]);
-  // const [modalShow, setModalShow] = useState(false);
-  // const [props, setProps] = useState();
-
-  // useEffect(() => {
-  //   setModalShow(!modalShow);
-  // }, [modalShow]);
-
-  // const handleClick = (event) => {
-  // console.log(event);
-  // const props = {
-  //   src: event.target.src,
-  //   alt: event.target.alt,
-  // };
-  // console.log(props);
-  //   setModalShow(!modalShow);
-  // };
 
   useEffect(() => {
     fetch(
@@ -185,11 +169,8 @@ const Silbadores = () => {
     )
       .then((response) => response.json())
       .then((data) => {
-        // console.log(data);
         let portraits = [];
         data.map((img) => {
-          // console.log(img);
-          // if (img.caption.rendered === "<p>silbador</p>\n") {
           portraits = [
             ...portraits,
             <img
@@ -200,30 +181,14 @@ const Silbadores = () => {
               width={100}
               key={img.id}
               className="img p-0"
-              // onClick={() => setModalShow(true)}
             />,
-            // <SilbadorModal
-            //   props={img}
-            //   show={modalShow}
-            //   // key={event.target.t}
-            //   onHide={() => setModalShow(false)}
-            // />,
           ];
-          // }
         });
         setPic(portraits);
       });
   }, []);
 
-  useEffect(() => {
-    // console.log(pic);
-  }, [pic]);
-
   // TODO: Modal for specific ID
-
-  // useEffect(() => {
-  //   console.log(pic);
-  // }, [pic]);
 
   return (
     <div className="silbadoresContainer">
@@ -233,18 +198,6 @@ const Silbadores = () => {
         tradición
       </p>
       <div className="pb-2">{pic}</div>
-      {/* <Container fluid>
-        <Row>
-          {pic.map((img) => {
-            // console.log(img);
-            return (
-              <Col lg={true} className="">
-                {img}
-              </Col>
-            );
-          })}
-        </Row>
-      </Container> */}
     </div>
   );
 };
