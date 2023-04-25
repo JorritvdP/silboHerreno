@@ -14,7 +14,7 @@ const Footer = () => {
         <a href="https://www.instagram.com/silboherreno/" target="_blank">
           <img
             src="https://img.icons8.com/ios/50/null/instagram-new--v1.png"
-            width="30px"
+            width="35px"
           />
         </a>
         <a
@@ -23,7 +23,7 @@ const Footer = () => {
         >
           <img
             src="https://img.icons8.com/ios/50/null/facebook--v1.png"
-            width="30px"
+            width="35px"
           />
         </a>
         <a
@@ -32,7 +32,7 @@ const Footer = () => {
         >
           <img
             src="https://img.icons8.com/ios/50/null/youtube-play--v1.png"
-            width="30px"
+            width="35px"
           />
         </a>
       </div>
