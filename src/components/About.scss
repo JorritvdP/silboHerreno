@@ -12,6 +12,9 @@
     text-decoration: none;
     color: black;
     font-weight: bold;
+    display: flex;
+    width: 100%;
+    align-items: center;
 
     &:hover{
       color: lightgreen;
@@ -21,12 +24,25 @@
   h3 {
     font-size: 35px;
     padding: 10px;
+    font-weight: bold;
   }
 }
 
 .link {
   padding: 5px;
-  border: 1px solid black;
-  border-radius: 10px;
+//   border: 1px solid black;
+//   border-radius: 10px;
   text-align: center;
+}
+
+.button {
+  background-color: rgba(6,136,47,255);
+  color: white;
+  margin: auto;
+
+
+  &:hover{
+    // background-color: lightgreen;
+    opacity: 0.7;
+  }
 }

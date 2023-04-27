@@ -30,18 +30,15 @@ const About = () => {
         comprometidas situaciones.
       </p>
 
-      <a href="https://www.silbadores.com/" target="_blank">
-        <h3 className="link">Estudio lingüístico Silbadores</h3>
-      </a>
       <p>
-        El silbo herreño fue descubierto en 1891 por el antropólogo francés
-        Joseph Lajard, entre un grupo de ocho panaderos herreños avecindados en
-        la ciudad de Las Palmas de Gran Canaria. Al menos desde entonces, esta
-        lengua silbada no ha dejado de sonar por los riscos y dehesas de El
-        Hierro, como medio de enfrentar la distancia y el aislamiento. Te
-        invitamos a adentrarte en la intrahistoria del silbo herreño de la mano
-        de sus protagonistas.
+        Sigue el enlace para obtener más información sobre el estudio
+        lingüístico Silbadores
       </p>
+      <a href="https://www.silbadores.com/" target="_blank">
+        <button className="button">
+          <h3 className="link">Estudio lingüístico Silbadores</h3>
+        </button>
+      </a>
     </div>
   );
 };
