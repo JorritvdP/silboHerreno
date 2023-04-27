@@ -25,7 +25,6 @@ const Colaboracion = () => {
               width={width}
               key={img.id}
               className="image"
-              // onClick={() => setModalShow(true)}
             />,
           ];
         });
@@ -35,33 +34,7 @@ const Colaboracion = () => {
   return (
     <div className="colaboracionContainer">
       <h3>Con la Colaboración de</h3>
-      <div className="imagenes">
-        {pic}
-        {/* <StaticImage
-          src="../images/la-frontera_escudonv.png"
-          width={width}
-          height={height}
-          objectFit="contain"
-        />
-        <StaticImage
-          src="../images/El_Pinar_de_El_Hierro.png"
-          width={width}
-          height={height}
-          objectFit="contain"
-        />
-        <StaticImage
-          src="../images/escudo_valverde1.png"
-          width={width}
-          height={height}
-          objectFit="contain"
-        />
-        <StaticImage
-          src="../images/cabildo.png"
-          width={width}
-          height={height}
-          objectFit="contain"
-        /> */}
-      </div>
+      <div className="imagenes">{pic}</div>
     </div>
   );
 };
