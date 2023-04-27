@@ -1,3 +1,11 @@
+$breakpoint-small: 900px;
+
+@media (max-width: $breakpoint-small) {
+  #title {
+    display: none;
+  }
+}
+
 .colaboracionContainer{
   font-family: "Montserrat";
   padding: 1.25em; //px;
@@ -7,6 +15,7 @@
   background-color: rgb(6,136,47,255);
   display: flex;
   text-align: center;
+  align-items: center;
 
   h3 {
     color: white;
@@ -17,11 +26,12 @@
 }
 
 .imagenes{
-  width: 100%;
+  max-width: 100%;
   padding: 0.5em; //10px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: auto;
 }
 
 .image{

@@ -13,13 +13,14 @@ const Colaboracion = () => {
     )
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         let imagenes = [];
         data.map((img) => {
           imagenes = [
             ...imagenes,
             <img
               t={img.id}
-              src={img.link}
+              src={img.media_details.sizes.medium.source_url}
               alt={img.title.rendered}
               height={height}
               width={width}
@@ -33,7 +34,7 @@ const Colaboracion = () => {
   }, []);
   return (
     <div className="colaboracionContainer">
-      <h3>Con la Colaboración de</h3>
+      <h3 id="title">Con la Colaboración de</h3>
       <div className="imagenes">{pic}</div>
     </div>
   );
