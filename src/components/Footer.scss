@@ -3,8 +3,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
-  padding: 0px 50px;
+  height: 6.25em; //100px;
+  padding: 0px 3.125em; //50px;
   color: rgba(0,0,0,0.6);
 }
 .footerLinks{
@@ -14,8 +14,8 @@
   a {
     opacity: 0.4;
     text-decoration: none;
-    font-size: 24px;
-    padding: 0px 10px;
+    font-size: 1.6em; //24px;
+    padding: 0px 0.625em; //10px;
   }
 
   a:hover {

@@ -1,19 +1,19 @@
 .casasContainer {
   font-family: "Montserrat";
-  padding: 30px;
+  padding: 1.875em; //30px;
   margin: auto;
   width: 80vw;
 
   h2 {
-    font-size: 50px;
-    padding: 10px;
+    font-size: 3,125em; //50px;
+    padding: 0.625em; //10px;
     color: white;
     font-weight: bold;
     background-color: rgb(6,136,47,255);
   }
 
   p {
-    font-size: 20px;
-    padding: 10px;
+    font-size: 1.25em; //20px;
+    padding: 0.625em; //10px;
   }
 }

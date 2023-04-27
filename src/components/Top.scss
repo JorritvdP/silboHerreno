@@ -8,15 +8,15 @@
   background-repeat: no-repeat;
   background-position: top;
   color: white;
-  padding: 150px 0;
-  height: 350px;
-  margin-bottom: 30px;
+  padding: 9.375em 0; //150px
+  height: 21.875em; //350px;
+  margin-bottom: 1.875em; //30px;
 
   h1{
-    padding: 5px;
+    padding: 0.3125em; //5px;
     color: white;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-    font-size: 80px;
+    font-size: 5em; //80px;
     font-weight: bold;
     font-family: "Montserrat";
   }

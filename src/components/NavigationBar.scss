@@ -1,7 +1,7 @@
 .navContainer{
   width: 100vw;
-  height: 80px;
-  padding: 8px;
+  height: 5em;  //80px;
+  padding: 0.5em; //8px;
   align-items: center;
   background-color: rgb(224,241,255);
   display: flex;
@@ -13,19 +13,19 @@
   z-index: 10;
 
   .image {
-    height: 80px;
-    width: 90px;
+    height: 5em; //80px;
+    width: 5.62em; //90px;
     display: flex; ;
     align-items: center;
-    margin-left: 30px;
+    margin-left: 1.875; //30px;
   }
 }
 
 .links{
-  padding: 5px;
+  padding: 0.3125em; //5px;
   text-align: center;
   display: flex;
-  margin-right: 30px;
+  margin-right: 1.875em; //30px;
   ul{
     display: flex;
     list-style-type: none;
@@ -33,7 +33,7 @@
     margin: 0;
     li{
       display: inline;
-      padding: 10px;
+      padding: 0.625em; //10px;
 
       a{
         text-decoration: none;

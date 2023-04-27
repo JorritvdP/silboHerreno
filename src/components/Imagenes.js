@@ -13,6 +13,8 @@ const Imagenes = () => {
         let imagenes = [];
         data.map((img) => {
           // if (img.caption.rendered === "<p>el hierro</p>\n") {
+          // const height = "9.375em";
+          // const width = "14.0625em";
           imagenes = [
             ...imagenes,
             <img
