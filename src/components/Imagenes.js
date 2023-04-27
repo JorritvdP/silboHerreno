@@ -39,7 +39,7 @@ const Imagenes = () => {
         Descubre las tradicionales casas de roca volcánica con techados de
         madera de sabina.
       </p>
-      <div>{pic}</div>
+      <div className="container ">{pic}</div>
     </div>
   );
 };

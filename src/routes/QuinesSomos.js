@@ -8,7 +8,7 @@ import Footer from "../components/Footer";
 function QuienesSomos() {
   return (
     <div className="Quienes">
-      <Navigationbar />
+      <Navigationbar page="quienes" />
       <Top />
       <About />
       <Footer />

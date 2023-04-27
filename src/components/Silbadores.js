@@ -197,7 +197,7 @@ const Silbadores = () => {
         Galería homenaje a los silbadores herreños que mantienen viva esta bella
         tradición
       </p>
-      <div className="pb-2">{pic}</div>
+      <div className="container pb-2">{pic}</div>
     </div>
   );
 };

@@ -67,7 +67,9 @@ const Navigationbar = (props) => {
             <a href="/quienessomos">Quiénes Somos</a>
           </li>
           <li>
-            <a href="/">Contacto</a>
+            <a href="/" className="hide">
+              Contacto
+            </a>
           </li>
           {/* <li class="nav-item dropdown">
             <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
