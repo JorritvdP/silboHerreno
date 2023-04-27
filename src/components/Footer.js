@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <div className="footerContainer">
       <div className="footerText">
-        <p>{text}</p>
+        <p id="title">{text}</p>
       </div>
       <div className="footerLinks">
         <a href="https://www.instagram.com/silboherreno/" target="_blank">

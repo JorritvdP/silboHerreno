@@ -1,3 +1,11 @@
+$breakpoint-xsmall: 675px;
+
+@media (max-width: $breakpoint-xsmall) {
+  #small{
+    font-size: 3em;
+  }
+}
+
 .bannerContainer {
   width: 100%;
   text-align: center;

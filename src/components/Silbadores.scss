@@ -1,3 +1,21 @@
+$breakpoint-small: 900px;
+
+@media (max-width: $breakpoint-small) {
+  .photo{
+    display: contents !important;
+  }
+
+  .pics{
+    display: none;
+  }
+}
+
+@media (max-width: $breakpoint-small) {
+  #smaller{
+    font-size: 1.6em;
+  }
+}
+
 .silbadoresContainer {
   font-family: "Montserrat";
   padding: 1.25em; //20px;
@@ -28,4 +46,8 @@
 
 .img:hover {
   cursor: pointer;
+}
+
+.photo{
+  display: none;
 }

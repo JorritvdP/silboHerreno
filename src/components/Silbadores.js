@@ -1,14 +1,7 @@
 import React, { useState, useEffect } from "react";
-// import Container from "react-bootstrap/Container";
-// import Row from "react-bootstrap/Row";
-// import Col from "react-bootstrap/Col";
 // import SilbadorModal from "./SilbadorModal";
 import "./Silbadores.scss";
 
-// console.log(Portraits);
-// const width = "130px";
-
-// const portraits = [
 //   <StaticImage
 //     src="../images/Vitoriano-Fidel-Padron-Gonzalez.jpg"
 //     alt="Vitoriano-Fidel-Padron-Gonzalez"
@@ -162,6 +155,7 @@ import "./Silbadores.scss";
 
 const Silbadores = () => {
   const [pic, setPic] = useState([]);
+  const [photo, setPhoto] = useState([]);
 
   useEffect(() => {
     fetch(
@@ -188,16 +182,42 @@ const Silbadores = () => {
       });
   }, []);
 
+  useEffect(() => {
+    fetch(
+      "https://silbodeelhierro.com//wp-json/wp/v2/media?per_page=10&search=silbador"
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        let photos = [];
+        data.map((img) => {
+          photos = [
+            ...photos,
+            <img
+              t={img.id}
+              src={img.link}
+              alt={img.title.rendered}
+              height={150}
+              width={100}
+              key={img.id}
+              className="img p-0 photos"
+            />,
+          ];
+        });
+        setPhoto(photos);
+      });
+  }, []);
+
   // TODO: Modal for specific ID
 
   return (
     <div className="silbadoresContainer">
-      <h2>Silbadores actuales</h2>
+      <h2 id="smaller">Silbadores actuales</h2>
       <p>
         Galería homenaje a los silbadores herreños que mantienen viva esta bella
         tradición
       </p>
-      <div className="container pb-2">{pic}</div>
+      <div className="container pb-2 pics">{pic}</div>
+      <div className="container pb-2 photo">{photo}</div>
     </div>
   );
 };
