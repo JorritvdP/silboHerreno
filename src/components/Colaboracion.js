@@ -14,7 +14,7 @@ const Colaboracion = () => {
       .then((response) => response.json())
       .then((data) => {
         let imagenes = [];
-        data.foreach((img) => {
+        data.map((img) => {
           imagenes = [
             ...imagenes,
             <img

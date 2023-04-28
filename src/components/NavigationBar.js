@@ -6,11 +6,11 @@ const Navigationbar = (props) => {
   const [logo, setLogo] = useState();
 
   useEffect(() => {
-    fetch("http://silbodeelhierro.com//wp-json/wp/v2/media?search=navbar")
+    fetch("http://silbodeelhierro.es//wp-json/wp/v2/media?search=navbar")
       .then((response) => response.json())
       .then((data) => {
         let logo = [];
-        data.foreach((img) => {
+        data.map((img) => {
           logo = (
             <img
               t={img.id}

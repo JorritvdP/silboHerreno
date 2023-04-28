@@ -12,7 +12,7 @@ const Imagenes = () => {
       .then((response) => response.json())
       .then((data) => {
         let imagenes = [];
-        data.foreach((img) => {
+        data.map((img) => {
           imagenes = [
             ...imagenes,
             <img
@@ -39,7 +39,7 @@ const Imagenes = () => {
       .then((response) => response.json())
       .then((data) => {
         let imagen = [];
-        data.foreach((img) => {
+        data.map((img) => {
           // if (img.caption.rendered === "<p>el hierro</p>\n") {
           // const height = "9.375em";
           // const width = "14.0625em";

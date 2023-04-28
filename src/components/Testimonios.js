@@ -9,7 +9,7 @@ const Testimonios = () => {
       .then((response) => response.json())
       .then((data) => {
         let background = [];
-        data.foreach((img) => {
+        data.map((img) => {
           background = [
             <img
               t={img.id}

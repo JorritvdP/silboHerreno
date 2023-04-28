@@ -164,7 +164,7 @@ const Silbadores = () => {
       .then((response) => response.json())
       .then((data) => {
         let portraits = [];
-        data.foreach((img) => {
+        data.map((img) => {
           portraits = [
             ...portraits,
             <img
@@ -189,7 +189,7 @@ const Silbadores = () => {
       .then((response) => response.json())
       .then((data) => {
         let photos = [];
-        data.foreach((img) => {
+        data.map((img) => {
           photos = [
             ...photos,
             <img
