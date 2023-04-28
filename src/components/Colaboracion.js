@@ -9,13 +9,12 @@ const Colaboracion = () => {
 
   useEffect(() => {
     fetch(
-      "https://silbodeelhierro.com//wp-json/wp/v2/media?per_page=4&search=colab"
+      "http://silbodeelhierro.com//wp-json/wp/v2/media?per_page=4&search=colab"
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         let imagenes = [];
-        data.map((img) => {
+        data.foreach((img) => {
           imagenes = [
             ...imagenes,
             <img

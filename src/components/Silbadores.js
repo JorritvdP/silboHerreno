@@ -159,12 +159,12 @@ const Silbadores = () => {
 
   useEffect(() => {
     fetch(
-      "https://silbodeelhierro.com//wp-json/wp/v2/media?per_page=30&search=silbador"
+      "http://silbodeelhierro.com//wp-json/wp/v2/media?per_page=30&search=silbador"
     )
       .then((response) => response.json())
       .then((data) => {
         let portraits = [];
-        data.map((img) => {
+        data.foreach((img) => {
           portraits = [
             ...portraits,
             <img
@@ -184,12 +184,12 @@ const Silbadores = () => {
 
   useEffect(() => {
     fetch(
-      "https://silbodeelhierro.com//wp-json/wp/v2/media?per_page=10&search=silbador"
+      "http://silbodeelhierro.com//wp-json/wp/v2/media?per_page=10&search=silbador"
     )
       .then((response) => response.json())
       .then((data) => {
         let photos = [];
-        data.map((img) => {
+        data.foreach((img) => {
           photos = [
             ...photos,
             <img

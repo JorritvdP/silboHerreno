@@ -6,14 +6,12 @@ const Testimonios = () => {
 
   useEffect(() => {
     fetch(
-      "https://silbodeelhierro.com//wp-json/wp/v2/media?per_page=1&search=bg"
+      "http://silbodeelhierro.com//wp-json/wp/v2/media?per_page=1&search=bg"
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         let background = [];
-        data.map((img) => {
-          // console.log(img);
+        data.foreach((img) => {
           background = [
             <img
               t={img.id}
@@ -37,12 +35,7 @@ const Testimonios = () => {
     backgroundSize: "cover",
   };
 
-  return (
-    <div
-      // className="testimoniosContainer"
-      style={myStyle}
-    ></div>
-  );
+  return <div style={myStyle}></div>;
 };
 
 export default Testimonios;

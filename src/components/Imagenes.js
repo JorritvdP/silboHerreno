@@ -7,15 +7,12 @@ const Imagenes = () => {
 
   useEffect(() => {
     fetch(
-      "https://silbodeelhierro.com//wp-json/wp/v2/media?per_page=16&search=el hierro"
+      "http://silbodeelhierro.com//wp-json/wp/v2/media?per_page=16&search=el hierro"
     )
       .then((response) => response.json())
       .then((data) => {
         let imagenes = [];
-        data.map((img) => {
-          // if (img.caption.rendered === "<p>el hierro</p>\n") {
-          // const height = "9.375em";
-          // const width = "14.0625em";
+        data.foreach((img) => {
           imagenes = [
             ...imagenes,
             <img
@@ -37,12 +34,12 @@ const Imagenes = () => {
 
   useEffect(() => {
     fetch(
-      "https://silbodeelhierro.com//wp-json/wp/v2/media?per_page=8&search=el hierro"
+      "http://silbodeelhierro.com//wp-json/wp/v2/media?per_page=8&search=el hierro"
     )
       .then((response) => response.json())
       .then((data) => {
         let imagen = [];
-        data.map((img) => {
+        data.foreach((img) => {
           // if (img.caption.rendered === "<p>el hierro</p>\n") {
           // const height = "9.375em";
           // const width = "14.0625em";
