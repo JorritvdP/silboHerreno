@@ -9,7 +9,7 @@ const Colaboracion = () => {
 
   useEffect(() => {
     fetch(
-      "http://silbodeelhierro.com//wp-json/wp/v2/media?per_page=4&search=colab"
+      "http://silbodeelhierro.es//wp-json/wp/v2/media?per_page=4&search=colab"
     )
       .then((response) => response.json())
       .then((data) => {

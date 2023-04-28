@@ -7,7 +7,7 @@ const Imagenes = () => {
 
   useEffect(() => {
     fetch(
-      "http://silbodeelhierro.com//wp-json/wp/v2/media?per_page=16&search=el hierro"
+      "http://silbodeelhierro.es//wp-json/wp/v2/media?per_page=16&search=el hierro"
     )
       .then((response) => response.json())
       .then((data) => {
@@ -34,7 +34,7 @@ const Imagenes = () => {
 
   useEffect(() => {
     fetch(
-      "http://silbodeelhierro.com//wp-json/wp/v2/media?per_page=8&search=el hierro"
+      "http://silbodeelhierro.es//wp-json/wp/v2/media?per_page=8&search=el hierro"
     )
       .then((response) => response.json())
       .then((data) => {

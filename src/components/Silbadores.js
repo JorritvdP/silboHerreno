@@ -159,7 +159,7 @@ const Silbadores = () => {
 
   useEffect(() => {
     fetch(
-      "http://silbodeelhierro.com//wp-json/wp/v2/media?per_page=30&search=silbador"
+      "http://silbodeelhierro.es//wp-json/wp/v2/media?per_page=30&search=silbador"
     )
       .then((response) => response.json())
       .then((data) => {
@@ -184,7 +184,7 @@ const Silbadores = () => {
 
   useEffect(() => {
     fetch(
-      "http://silbodeelhierro.com//wp-json/wp/v2/media?per_page=10&search=silbador"
+      "http://silbodeelhierro.es//wp-json/wp/v2/media?per_page=10&search=silbador"
     )
       .then((response) => response.json())
       .then((data) => {
