@@ -5,7 +5,9 @@ const Testimonios = () => {
   const [bgimage, setBgimage] = useState([]);
 
   useEffect(() => {
-    fetch("http://silbodeelhierro.es//wp-json/wp/v2/media?per_page=1&search=bg")
+    fetch(
+      "https://silbodeelhierro.es//wp-json/wp/v2/media?search=bg&per_page=1"
+    )
       .then((response) => response.json())
       .then((data) => {
         let background = [];
@@ -13,7 +15,7 @@ const Testimonios = () => {
           background = [
             <img
               t={img.id}
-              src={img.link}
+              src={img.guid.rendered}
               alt={img.title.rendered}
               height={150}
               width={100}

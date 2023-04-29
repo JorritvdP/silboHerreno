@@ -8,9 +8,7 @@ const Colaboracion = () => {
   const [pic, setPic] = useState([]);
 
   useEffect(() => {
-    fetch(
-      "http://silbodeelhierro.es//wp-json/wp/v2/media?per_page=4&search=colab"
-    )
+    fetch("https://silbodeelhierro.es/wp-json/wp/v2/media?search=colab")
       .then((response) => response.json())
       .then((data) => {
         let imagenes = [];

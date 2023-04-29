@@ -159,7 +159,7 @@ const Silbadores = () => {
 
   useEffect(() => {
     fetch(
-      "http://silbodeelhierro.es//wp-json/wp/v2/media?per_page=30&search=silbador"
+      "https://silbodeelhierro.es//wp-json/wp/v2/media?search=silbador&per_page=30"
     )
       .then((response) => response.json())
       .then((data) => {
@@ -169,7 +169,7 @@ const Silbadores = () => {
             ...portraits,
             <img
               t={img.id}
-              src={img.link}
+              src={img.media_details.sizes.medium.source_url}
               alt={img.title.rendered}
               height={150}
               width={100}
@@ -184,7 +184,7 @@ const Silbadores = () => {
 
   useEffect(() => {
     fetch(
-      "http://silbodeelhierro.es//wp-json/wp/v2/media?per_page=10&search=silbador"
+      "https://silbodeelhierro.es//wp-json/wp/v2/media?search=silbador&per_page=10"
     )
       .then((response) => response.json())
       .then((data) => {
@@ -194,7 +194,7 @@ const Silbadores = () => {
             ...photos,
             <img
               t={img.id}
-              src={img.link}
+              src={img.media_details.sizes.medium.source_url}
               alt={img.title.rendered}
               height={150}
               width={100}
