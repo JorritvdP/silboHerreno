@@ -2,9 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./Colaboracion.scss";
 
 const Colaboracion = () => {
-  const width = "145px";
-  const height = "200px";
-
   const [pic, setPic] = useState([]);
 
   useEffect(() => {
@@ -19,8 +16,8 @@ const Colaboracion = () => {
               t={img.id}
               src={img.media_details.sizes.medium.source_url}
               alt={img.title.rendered}
-              height={height}
-              width={width}
+              height={145}
+              width={200}
               key={img.id}
               className="image"
             />,
@@ -29,6 +26,7 @@ const Colaboracion = () => {
         setPic(imagenes);
       });
   }, []);
+
   return (
     <div className="colaboracionContainer">
       <h3 id="title">Con la Colaboración de</h3>
