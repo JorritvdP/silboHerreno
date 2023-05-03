@@ -1,8 +1,31 @@
 $breakpoint-small: 900px;
+$breakpoint-xsmall: 550px;
 
 @media (max-width: $breakpoint-small) {
   #title{
     display: none;
+  }
+}
+
+@media (min-width: $breakpoint-small) {
+  #title{
+    display: content;
+  }
+}
+
+@media (max-width: $breakpoint-xsmall) {
+  .imagenes{
+    display: none !important;
+  }
+
+  .colaboracionContainer{
+    height: 13em !important;
+  }
+}
+
+@media (min-width: $breakpoint-xsmall) {
+  .imagenes{
+    display: content;
   }
 }
 
