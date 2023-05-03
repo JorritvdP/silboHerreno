@@ -14,7 +14,6 @@ const Imagenes = () => {
         console.log(data);
         let imagenes = [];
         data.map((img) => {
-          console.log(img.link);
           imagenes = [
             ...imagenes,
             <img
