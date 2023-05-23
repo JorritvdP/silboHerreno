@@ -9,6 +9,8 @@ const Silbadores = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState();
 
+  // TODO: Display Modal properly
+
   const handleOpenModal = (event) => {
     // console.log(event.target);
     // let try1 = ;
@@ -82,8 +84,6 @@ const Silbadores = () => {
         setPhoto(photos);
       });
   }, []);
-
-  // TODO: Modal for specific ID
 
   return (
     <div className="silbadoresContainer">
